@@ -1,0 +1,74 @@
+.container-main-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./../../assets/1884497.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-section-form-signin {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.h2-form-signin {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-signin {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-sigin {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.input-key {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.container-span-btn-signin {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-signin {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-signin:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 480px) {
+  .container-section-form-signin {
+    padding: 10px;
+  }
+
+  .input-key {
+    margin-bottom: 10px;
+  }
+
+  .btn-signin {
+    padding: 8px 16px;
+  }
+}
