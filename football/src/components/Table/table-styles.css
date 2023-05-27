@@ -1,0 +1,174 @@
+.title {
+  text-align: center;
+}
+
+.container-table {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 95vw;
+  max-height: 600px;
+}
+
+.table-home {
+  margin-top: 100px;
+
+  border: 2px solid white;
+}
+
+.table-home thead tr {
+  padding: 0 20px;
+  border-bottom: 2px solid white;
+}
+
+.table-home .tbody {
+  padding: 0 5px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.team-logo {
+  width: 80px;
+  object-fit: fill;
+}
+
+.table-home tr {
+  display: flex;
+  margin-bottom: 5px;
+  padding: 0 10px;
+  background-color: rgba(25, 25, 25, 0.611);
+}
+
+.table-home td {
+  padding-top: 8px;
+}
+
+.tr:hover {
+  transform: scale(1.01);
+  color: black;
+  background-color: whitesmoke;
+}
+
+.theader-th,
+.tbody-td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.venue,
+.surface {
+  justify-content: flex-start;
+  width: 180px;
+  padding-left: 20px;
+}
+
+.logo {
+  width: 80px;
+}
+
+.team-id {
+  width: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .container-table {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .table-home {
+    width: 100%;
+    position: absolute;
+    top: 250px;
+  }
+
+  .tbody {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .table-home tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .theader-th,
+  .tbody-td {
+    width: 100%;
+    height: auto;
+  }
+
+  .team-logo {
+    width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-home {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .table-home thead {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table-home tbody {
+    display: block;
+  }
+
+  .table-home tr {
+    display: block;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .table-home td {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-home tr.card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .table-home td {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .table-home td.logo {
+    width: 100px;
+    margin-right: 10px;
+  }
+
+  .table-home td.venue {
+    flex: 2;
+  }
+
+  .team-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+  }
+}

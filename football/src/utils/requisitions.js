@@ -1,58 +1,89 @@
 import api from "../service/instance";
 import { notifyError } from "./notify";
 
-export async function loadTimeZones(key) {
+async function loadTeamsCountries(key) {
   try {
-    if (sessionStorage.getItem("token")) {
-      const { data } = await api.get("/timezone", {
-        headers: {
-          "X-RapidAPI-Key": key,
-          "X-APISports-Key": key,
-          "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-        },
-      });
-      return data;
-    }
-  } catch (error) {
-    notifyError(error.response.data);
-  }
-}
-export async function loadLeagues(key) {
-  try {
-    if (sessionStorage.getItem("token")) {
-      const { data } = await api.get("/league", {
-        headers: {
-          "X-RapidAPI-Key": key,
-          "X-APISports-Key": key,
-          "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-        },
-      });
-      return data;
-    }
+    const { data } = await api.get("/countries", {
+      headers: {
+        "x-rapidapi-key": key,
+        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+      },
+    });
+    return data;
   } catch (error) {
     notifyError(error.response.data);
   }
 }
 
-export async function loadTeamsStatistcs(key, leagueInput, seasonInput, teamInput) {
-  try {
-    if (sessionStorage.getItem("token")) {
-      const { data } = await api.get("/teams/statistics", {
-        params: {
-          league:leagueInput ,
-          season:seasonInput ,
-          team: teamInput,
-        },
+async function loadLeagues(key, countryCode) {
+  if (!key || !countryCode) return;
 
-        headers: {
-          "X-RapidAPI-Key": key,
-          "X-APISports-Key": key,
-          "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-        },
-      });
-      return data
-    }
+  try {
+    const { data } = await api.get(`/leagues?code=${countryCode}`, {
+      headers: {
+        "x-rapidapi-key": key,
+        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+      },
+    });
+    return data;
   } catch (error) {
     notifyError(error.response.data);
   }
 }
+
+async function loadTeams(key, leagueId, season) {
+  try {
+    const { data } = await api.get(
+      `/teams?league=${leagueId}&season=${season}`,
+      {
+        headers: {
+          "x-rapidapi-key": key,
+          "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    notifyError(error.response.data);
+  }
+}
+async function loadTeamStatistics(key, leagueId, season, teamId) {
+  if (!key || !season || !teamId || !leagueId) return;
+
+  try {
+    const { data } = await api.get(
+      `/teams/statistics?league=${leagueId}&season=${season}&team=${teamId}`,
+      {
+        headers: {
+          "x-rapidapi-key": key,
+          "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    notifyError(error.response.data);
+  }
+}
+async function loadPlayers(key, season, teamId) {
+  if(!key|| !season|| !teamId) return
+  try {
+    const { data } = await api.get(`/players?team=${teamId}&season=${season}`, {
+      headers: {
+        "x-rapidapi-key": key,
+        "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+      },
+    });
+    return data;
+  } catch (error) {
+    notifyError(error.response.data);
+  }
+}
+
+export {
+  loadTeamsCountries,
+  loadLeagues,
+  loadTeams,
+  loadPlayers,
+  loadTeamStatistics,
+};

@@ -5,13 +5,13 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  background-image: url(./../../assets/1884497.jpg);
+  background-image: url(./../../assets/5DMx8Xb.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .container-section-form-signin {
-  background-color: #f2f2f2;
+  background-color: #fbfbfb99;
   border-radius: 8px;
   padding: 20px;
   max-width: 400px;
@@ -29,9 +29,11 @@
   flex-direction: column;
 }
 
-.label-sigin {
+.label-signin {
   font-weight: bold;
   margin-bottom: 10px;
+    text-align: center;
+  font-size: 20px;
 }
 
 .input-key {
@@ -58,7 +60,11 @@
 .btn-signin:hover {
   background-color: #0056b3;
 }
-
+.signup-link{
+  text-align: center;
+  color : black;
+  font-size: 20px;
+}
 @media screen and (max-width: 480px) {
   .container-section-form-signin {
     padding: 10px;

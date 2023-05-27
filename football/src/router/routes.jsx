@@ -4,19 +4,20 @@ import Signin from "../pages/Signin/Signin.jsx";
 import Home from "../pages/Home/Home.jsx";
 
 function ProtectedRoutes() {
-  const token = sessionStorage.getItem("token");
+  const token = sessionStorage.getItem("key");
   return token ? <Outlet /> : <Navigate to="/signin" replace />;
 }
 
 function MainRoutes() {
   return (
     <>
-      <ToastContainer />
+      {" "}
+        <ToastContainer />
       <Routes>
         <Route path="/signin" element={<Signin />} />
         <Route path="/" element={<Signin />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path="/main" element={<Home/>} />
+          <Route path="/main" element={<Home />} />
         </Route>
       </Routes>
     </>

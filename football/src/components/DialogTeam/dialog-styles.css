@@ -1,0 +1,78 @@
+.dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+  width: 100vw;
+  height: 107vh;
+  overflow-y: auto;
+  background-color: white;
+  background-image: url(./../../assets/wp11146199.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+}
+.container-dialog {
+  background-color: rgba(0, 0, 0, 0.556);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 130vh;
+
+}
+@media screen and (min-width: 768px)  {
+.container-dialog {
+  gap:40px
+  
+}
+.dialog {
+  background-size: 100vw;
+  background-repeat: no-repeat;
+}
+}
+.dialog h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 200px;
+  height: 20px;
+}
+
+.container-statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.statistics-card {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: rgb(250, 245, 245);
+}
+
+.ul-formations {
+  background-color: rgba(0, 0, 0, 0.242);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  width: 90px;
+  height: 220px;
+  list-style: none;
+}
+.dialog .goals {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.242);
+}
+.section-results {
+  display: flex;
+  gap: 5px;
+}
+.container-section-statistics{display: flex;}
