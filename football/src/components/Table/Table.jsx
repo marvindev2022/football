@@ -35,7 +35,7 @@ function Table({ leagueId, teams, season }) {
         <>
           {bodySize <= 768 ? (
             <table className="table-home">
-              <tbody>
+              <tbody className="tbody">
                 {teams?.map((team) => (
                   <tr
                     key={Math.random()}
